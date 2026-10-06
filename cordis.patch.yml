@@ -1,0 +1,9 @@
+# dsh-mermaid-diagram bundle patch: insert this plugin's row into the profile
+# roster. One row mounts both halves — the browser half is driven by the
+# `dsh.client` declaration in package.json, not by a second row.
+#
+# Install (from a checkout or after publishing):
+#   dsh plugin --profile web add -w dsh-mermaid-diagram
+- insert:
+    - id: mermaid-diagram
+      name: 'dsh-mermaid-diagram'

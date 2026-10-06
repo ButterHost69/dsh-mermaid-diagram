@@ -1,0 +1,92 @@
+{
+  "name": "dsh-mermaid-diagram",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness (dsh) plugin that gives the model a Mermaid diagram tool and renders the result as a diagram card in the Web UI.",
+  "license": "MIT",
+  "author": "ButterHost69",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ButterHost69/dsh-mermaid-diagram.git"
+  },
+  "homepage": "https://github.com/ButterHost69/dsh-mermaid-diagram#readme",
+  "bugs": "https://github.com/ButterHost69/dsh-mermaid-diagram/issues",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "deepseek",
+    "mermaid",
+    "diagram",
+    "flowchart"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "icon": "icon.svg",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "lib/*.LEGAL.txt",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "engines": {
+    "node": "^22.19 || >=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "build": "tsc && tsdown && node scripts/build-runtime.mjs",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": "^0.2.0-rc.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4",
+    "@deepseek-ai/dsh-tools": "0.2.1-alpha.1",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "~18.3.1",
+    "@types/react-dom": "~18.3.1",
+    "jsdom": "^26.1.0",
+    "lightningcss": "1.32.0",
+    "mermaid": "11.17.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsdown": "0.22.2",
+    "typescript": "~5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

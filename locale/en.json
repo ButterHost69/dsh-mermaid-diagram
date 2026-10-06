@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Mermaid diagrams",
+    "description": "Gives the model a Mermaid tool and renders each diagram as a card in the conversation, with a source view and a code fallback."
+  }
+}
