@@ -65,7 +65,7 @@
   },
   "scripts": {
     "build": "tsc && tsdown && node scripts/build-runtime.mjs",
-    "prepare": "npm run build",
+    "prepare": "tsc && tsdown && node scripts/build-runtime.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
